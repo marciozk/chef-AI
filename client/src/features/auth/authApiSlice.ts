@@ -2,6 +2,10 @@ import { apiSlice } from '../../app/api/apiSlice';
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    getUserProfile: builder.query({
+      query: (username) => `/users/${username}`,
+      providesTags: (result, error, username) => [{ type: 'User', id: username }],
+    }),
     login: builder.mutation({
       query: (credentials) => ({
         url: '/auth/login',
@@ -42,6 +46,7 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useGetMeQuery,
+  useGetUserProfileQuery,
   useUpdateDetailsMutation,
   useUpdatePasswordMutation,
 } = authApiSlice;
