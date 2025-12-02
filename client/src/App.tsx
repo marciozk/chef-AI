@@ -16,7 +16,7 @@ import RecipeDetailPage from './pages/recipes/RecipeDetailPage';
 import RecipeFormPage from './pages/recipes/RecipeFormPage';
 import ProfilePage from './pages/user/ProfilePage';
 import MyRecipesPage from './pages/user/MyRecipesPage';
-import FavoritesPage from './pages/user/FavoritesPage';
+import FavoritesPage from './pages/favorites/FavoritesPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Create a theme instance
