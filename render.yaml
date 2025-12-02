@@ -1,0 +1,53 @@
+# Render Blueprint for Chef's Arsenal
+# Deploy both frontend and backend services
+
+services:
+  # Backend Service
+  - type: web
+    name: chefs-arsenal-api
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: chefs-arsenal-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+
+  # Frontend Service
+  - type: web
+    name: chefs-arsenal
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: "./client/build"
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false  # Will be set to the backend service URL
+
+# Database
+databases:
+  - name: chefs-arsenal-db
+    databaseName: chefs-arsenal
+    user: chefs-arsenal-user
+    plan: free  # Free tier
+
+# Environment variables for local development
+# These will be used by 'render dev'
+env: development
+envVars:
+  - key: NODE_ENV
+    value: development
+  - key: MONGODB_URI
+    value: mongodb://localhost:27017/chefs-arsenal
+  - key: JWT_SECRET
+    value: your_dev_jwt_secret
+  - key: PORT
+    value: 5000
+  - key: REACT_APP_API_URL
+    value: http://localhost:5000
