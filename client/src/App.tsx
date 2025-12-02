@@ -14,8 +14,8 @@ import RegisterPage from './pages/auth/RegisterPage';
 import RecipeListPage from './pages/recipes/RecipeListPage';
 import RecipeDetailPage from './pages/recipes/RecipeDetailPage';
 import RecipeFormPage from './pages/recipes/RecipeFormPage';
-import ProfilePage from './pages/user/ProfilePage';
-import MyRecipesPage from './pages/user/MyRecipesPage';
+import ProfilePage from './pages/profile/ProfilePage';
+import MyRecipesPage from './pages/recipes/MyRecipesPage';
 import FavoritesPage from './pages/favorites/FavoritesPage';
 import NotFoundPage from './pages/NotFoundPage';
 
