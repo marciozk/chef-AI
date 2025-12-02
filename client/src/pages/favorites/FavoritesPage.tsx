@@ -6,7 +6,7 @@ import {
   Chip, CircularProgress, Snackbar, Alert, useMediaQuery, IconButton, Tooltip,
   TextField, InputAdornment, Pagination, Divider, Button, Badge
 } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import { 
   Favorite as FavoriteIcon, Search as SearchIcon, Clear as ClearIcon,
   Timer as TimerIcon, Restaurant as RestaurantIcon, Star as StarIcon
@@ -133,7 +133,7 @@ const FavoritesPage: React.FC = () => {
           <>
             <Grid container spacing={3}>
               {favorites.map((recipe: any) => (
-                <Grid xs={12} sm={6} md={4} lg={3} key={recipe._id}>
+                <Grid item xs={12} sm={6} md={4} lg={3} key={recipe._id}>
                   <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <CardActionArea href={`/recipes/${recipe._id}`}>
                       <CardMedia

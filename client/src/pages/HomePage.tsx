@@ -6,7 +6,7 @@ import {
   Button, 
   Paper
 } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import { RootState } from '../app/store';
@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
       >
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-            <Grid xs={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Typography variant="h2" component="h1" gutterBottom>
                 Elevate Your Culinary Journey
               </Typography>
@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
                 )}
               </Box>
             </Grid>
-            <Grid xs={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Box
                 component="img"
                 src="/images/hero-image.jpg"
