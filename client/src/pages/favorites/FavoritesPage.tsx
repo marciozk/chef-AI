@@ -6,7 +6,7 @@ import {
   Chip, CircularProgress, Snackbar, Alert, useMediaQuery, IconButton, Tooltip,
   TextField, InputAdornment, Pagination, Divider, Button, Badge
 } from '@mui/material';
-import { Grid } from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Unstable_Grid2';
 import { 
   Favorite as FavoriteIcon, Search as SearchIcon, Clear as ClearIcon,
   Timer as TimerIcon, Restaurant as RestaurantIcon, Star as StarIcon

@@ -4,21 +4,9 @@ import {
   Container, 
   Typography, 
   Button, 
-  Paper,
-  Grid as MuiGrid,
-  GridProps as MuiGridProps,
-  styled
+  Paper
 } from '@mui/material';
-
-// Create a custom Grid component with proper TypeScript types
-interface GridProps extends MuiGridProps {
-  item?: boolean;
-  container?: boolean;
-}
-
-const Grid = styled(({ item, container, ...rest }: GridProps) => (
-  <MuiGrid item={item} container={container} {...rest} />
-))<GridProps>``;
+import Grid from '@mui/material/Unstable_Grid2';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import { RootState } from '../app/store';
@@ -41,7 +29,7 @@ const HomePage: React.FC = () => {
       >
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Typography variant="h2" component="h1" gutterBottom>
                 Elevate Your Culinary Journey
               </Typography>
@@ -85,7 +73,7 @@ const HomePage: React.FC = () => {
                 )}
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Box
                 component="img"
                 src="/images/hero-image.jpg"
